@@ -1,0 +1,27 @@
+{
+  "name": "roadmap-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node js/app.js",
+    "dev": "nodemon js/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halloween-px/roadmap-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halloween-px/roadmap-2/issues"
+  },
+  "homepage": "https://github.com/halloween-px/roadmap-2#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node js/app.js",
-    "dev": "nodemon js/app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "react": "next dev"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,11 @@
   },
   "homepage": "https://github.com/halloween-px/roadmap-2#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "next": "^12.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

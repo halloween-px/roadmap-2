@@ -8,7 +8,7 @@ fetch('http://localhost:3001/users')
 			const teamItem = document.createElement('div');
 			teamItem.classList.add('team__item');
 			teamItem.innerHTML = `
-<img class="team__photo" src="img/team/team${user.id % 3 + 1}.jpg" alt="">
+<img class="team__photo" style="width:100%" src="https://i.pravatar.cc/150?img=${user.id}" alt="">
 
 	<div class="team__title1">${user.username}</div>
 	<div class="team__title2">${user.email}</div>

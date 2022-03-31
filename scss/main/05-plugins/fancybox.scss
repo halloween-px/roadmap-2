@@ -1,0 +1,9 @@
+.fancybox__thumbs {
+	.carousel__slide {
+		.fancybox__thumb {
+			&:after {
+				border-color: $color-theme;
+			}
+		}
+	}
+}

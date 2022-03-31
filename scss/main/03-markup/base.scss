@@ -1,0 +1,29 @@
+body {
+	font-family: map-get($body-prop, font-family);
+	color: map-get($body-prop, color);
+	font-weight: map-get($body-prop, fw);
+	font-size: map-get($body-prop, fs);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: $font-family-heading;
+}
+
+a {
+	text-decoration: none;
+	transition: $transition;
+	color: $color-link;
+}
+
+ul, ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+button, a, input, textarea, select, .btn {
+	&:focus, &:active {
+		outline: none;
+		box-shadow: none;
+	}
+}

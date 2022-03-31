@@ -1,0 +1,43 @@
+.vg-contacts {
+	&-item {
+		padding: 12px 24px;
+		@include flex(center, center);
+		height: 100%;
+
+		i {
+			font-size: 63.88px;
+			color: $color-theme;
+			margin-right: 24px;
+
+			@media #{$xxl-device, $xl-device, $lg-device, $md-device , $sm-device} {
+				font-size: 52px;
+			}
+		}
+
+		a, span {
+			display: block;
+			@include font-prop(24px, 600, $color-text, 1.4);
+
+			@media #{$xxl-device, $lg-device, $sm-device} {
+				font-size: 20px;
+			}
+
+			@media #{$xl-device, $md-device, $xs-device} {
+				font-size: 18px;
+			}
+		}
+
+		a:hover {
+			color: $color-theme;
+		}
+	}
+
+	.image-area {
+		width: 100%;
+		height: 100%;
+
+		img {
+			@include fit();
+		}
+	}
+}

@@ -1,0 +1,116 @@
+// Fonts
+$font-family-base: 'Poppins', sans-serif !default;
+$font-family-heading: 'Poppins', sans-serif !default;
+$font-family-special: 'Poppins', sans-serif !default;
+$font-awesome: 'Font Awesome 6 Pro' !default;
+
+// Colors
+$dark: #2d2d2d !default;
+$light: #ffffff !default;
+
+$color-text: $dark !default;
+$color-theme: #EBC858 !default;
+$color-second: #EBAC58 !default;
+$color-link: $color-theme !default;
+
+// Grid
+$grid-container-max-widths: 1360px;
+$grid-gutter-width: 24px;
+
+// Transition
+$transition: all .4s ease !default;
+
+// Positions
+$positions: top, right, bottom, left;
+
+// Border Global
+$border-radius: 0;
+$border-width: 1px;
+$border-style: solid;
+$border-color: #e8e8e8;
+
+// Body, global style
+$body-prop: (
+		'font-family': $font-family-base,
+		'fs': 16px,
+		'color': $color-text,
+		'fw': 400,
+		'bg': white
+);
+
+// Section
+// .section-padding
+$section-padding: 100px;
+$section-padding-default: (
+		'top': $section-padding,
+		'bottom': $section-padding
+);
+$section-padding-default--lg: (
+		'top': calc(#{$section-padding} - (#{$section-padding} * 20 / 100)),
+		'bottom': calc(#{$section-padding} - (#{$section-padding} * 20 / 100))
+);
+$section-padding-default--md: (
+		'top': calc(#{$section-padding} - (#{$section-padding} * 30 / 100)),
+		'bottom': calc(#{$section-padding} - (#{$section-padding} * 30 / 100))
+);
+$section-padding-default--sm: (
+		'top': calc(#{$section-padding} - (#{$section-padding} * 50 / 100)),
+		'bottom': calc(#{$section-padding} - (#{$section-padding} * 50 / 100))
+);
+
+// .section-title
+$section-title-main: ('fs': 30px, 'fw': 600, 'lh': 1);
+$section-title-sub: ('fs': 18px, 'fw': 500, 'lh': 1);
+$section-title-text: ('fs': 14px, 'fw': 400, 'lh': 1);
+$section-title-margin: 30px;
+
+// Btn
+$btn-border-width: $border-width;
+
+$btn-color-primary: ('background': $color-theme, 'color': $light);
+$btn-color-primary-hover: ('background': $color-second, 'color': $light);
+
+$btn-color-secondary: ('background': transparent, 'color': $light);
+$btn-color-secondary-hover: ('background': transparent, 'color': $color-second);
+
+$btn-size-default: ('padding': 8px 40px, 'fs': 15px, 'lh': 1.5, 'radius': 0, 'fw': 600);
+$btn-size-large: ('padding': 20px 30px, 'fs': 16px, 'lh': 1.5, 'radius': 0, 'fw': 400);
+$btn-size-small: ('padding': 10px 15px, 'fs': 13px, 'lh': 1, 'radius': 0, 'fw': 400);
+
+// List
+$list-border: (
+		'width': $border-width,
+		'style': $border-style,
+		'color': $border-color,
+		'radius': $border-radius
+);
+
+// Form
+$form-control: (
+		'padding': 15px 20px,
+		'font-size': map-get($body-prop, fs),
+		'color': $color-text,
+		'border': $border-width $border-style $border-color,
+		'border-radius': $border-radius
+);
+
+$form-control-placeholder: (
+		'font-size': 14px,
+		'color': rgba($color-text, .8),
+);
+
+// Scrollbar
+$scrollbar-width: 6px;
+$scrollbar-track-bg: #f1f1f1;
+$scrollbar-thumb-bg: rgba($dark, .7);
+$scrollbar-thumb-bg-hover: rgba($dark, 1);
+
+// Responsive Variables
+$desktop-device: 'only screen and (min-width: 1600px)';
+$xxl-device: 'only screen and (min-width: 1400px) and (max-width: 1599px)';
+$xl-device: 'only screen and (min-width: 1200px) and (max-width: 1399.98px)';
+$lg-device: 'only screen and (min-width: 992px) and (max-width: 1199.98px)';
+$md-device: 'only screen and (min-width: 768px) and (max-width: 991.98px)';
+$sm-device: 'only screen and (max-width: 767.98px)';
+$xs-device: 'only screen and (max-width: 575.98px)';
+$xxs-device: 'only screen and (max-width: 320.98px)';

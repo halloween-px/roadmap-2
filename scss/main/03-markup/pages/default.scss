@@ -1,0 +1,49 @@
+&-default {
+	ul {
+		margin-bottom: 15px;
+		padding-left: 30px;
+
+		li {
+			list-style: disc;
+			margin-bottom: 10px;
+			line-height: 1.5;
+		}
+	}
+
+	ol {
+		margin-bottom: 15px;
+		padding-left: 30px;
+
+		li {
+			list-style: decimal ;
+			margin-bottom: 10px;
+			line-height: 1.5;
+		}
+	}
+
+	u {
+		color: $color-theme;
+	}
+
+	blockquote {
+		padding: 40px 40px 40px 100px;
+		border: none;
+		font-size: 1.82rem;
+		background-color: #f7f7f7;
+		max-width: 90%;
+		margin: 0 auto;
+		position: relative;
+
+		&:after {
+			content: '\f10d';
+			font-weight: 600;
+			font-family: $font-awesome;
+			position: absolute;
+			left: -15px;
+			top: 14px;
+			font-size: 80px;
+			color: rgba(0,0,0,0.1);
+			line-height: 1;
+		}
+	}
+}

@@ -1,0 +1,91 @@
+.vg-infoblock {
+	padding-top: 24px;
+
+	&-wrapper {
+		perspective: 1000px;
+		transform-style: preserve-3d;
+		transition: transform 0.2s ;
+	}
+
+	&-item {
+		padding: 24px;
+		@include flex(center, end, column);
+		height: 400px;
+		position: relative;
+		z-index: 1;
+		perspective: 1000px;
+		transform-style: preserve-3d;
+		transition: transform 0.2s ;
+
+		@media #{$xxl-device, $xl-device} {
+			padding: 12px;
+			height: 350px;
+		}
+
+		@media #{$lg-device, $md-device, $sm-device} {
+			height: 250px;
+			padding: 12px;
+		}
+
+		@media #{$md-device} {
+			height: 200px;
+		}
+
+		@media #{$sm-device} {
+			height: 180px;
+		}
+
+		&:after {
+			content: '';
+			@include fullAbsolute();
+			background: linear-gradient(0deg, rgba(45, 45, 45, 0.9) 0%, rgba(45, 45, 45, 0.9) 20%, rgba(45, 45, 45, 0.2) 50%);
+			z-index: -1;
+		}
+
+		h4, p {
+			pointer-events: none;
+		}
+
+		h4 {
+			@include font-prop(30px, 600, $light);
+			letter-spacing: 5px;
+			text-align: center;
+
+			@media #{$xxl-device} {
+				font-size: 28px;
+				letter-spacing: 2px;
+			}
+
+			@media #{$xl-device} {
+				font-size: 25px;
+			}
+
+			@media #{$lg-device, $md-device, $sm-device} {
+				font-size: 24px;
+				letter-spacing: 0;
+			}
+
+			@media #{$md-device, $sm-device} {
+				letter-spacing: 5px;
+			}
+
+			@media #{$sm-device} {
+				font-size: 22px;
+			}
+		}
+
+		p {
+			@include font-prop(16px, 500, $light);
+			text-align: center;
+			margin-bottom: 0;
+
+			@media #{$xl-device} {
+				font-size: 15px;
+			}
+
+			@media #{$lg-device, $md-device, $sm-device} {
+				display: none;
+			}
+		}
+	}
+}

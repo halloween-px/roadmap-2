@@ -1,0 +1,257 @@
+.vg-slider {
+	position: relative;
+	--padding-top: 140px;
+	--padding-bottom: 140px;
+	overflow: hidden;
+
+	&-item {
+		height: 100vh;
+
+		@media #{$lg-device, $md-device, $sm-device} {
+			height: 730px;
+		}
+
+		@media #{$xs-device} {
+			height: 670px;
+		}
+
+		.image-area, .title, .subtitle {
+			position: relative;
+			overflow: hidden;
+
+			span {
+				transition: $transition;
+				transition-delay: .5s;
+				opacity: 0;
+			}
+
+			&:after {
+				content: '';
+				width: 0;
+				height: 100%;
+				left: -100%;
+				top: 0;
+				position: absolute;
+				background-color: $color-theme;
+				z-index: 1;
+			}
+		}
+
+		.image-area {
+			width: 45%;
+			height: 570px;
+			position: absolute;
+			right: -12px;
+			z-index: -1;
+
+			@media #{$lg-device} {
+				width: 44%;
+				height: 420px;
+			}
+
+			@media #{$md-device, $sm-device} {
+				display: none;
+			}
+
+			&:after {
+				background-color: $color-second;
+			}
+
+			img{
+				@include fit();
+			}
+		}
+
+		&--image {
+			filter: blur(4px);
+			width: 100%;
+			height: 100%;
+
+			img {
+				@include fit();
+			}
+
+			@media #{$md-device, $sm-device} {
+				filter: blur(0);
+			}
+		}
+
+		&:before {
+			content: '';
+			@include fullAbsolute();
+			z-index: 1;
+			background: linear-gradient(rgba(45, 45, 45, 0.9) 0%, rgba(45, 45, 45, 0.2) 100%);
+
+			@media #{$md-device, $sm-device} {
+				background: linear-gradient(rgba(45, 45, 45, 0.9) 0%, rgba(45, 45, 45, 0.2) 200%);
+			}
+		}
+
+		.title {
+			@include font-prop(70px, 900, $light, 1);
+			margin-bottom: 24px;
+			text-shadow: 0 1px 2px $color-text;
+			letter-spacing: 5px;
+
+			@media #{$lg-device} {
+				font-size: 55px;
+			}
+
+			@media #{$md-device} {
+				font-size: 60px;
+			}
+
+			@media #{$sm-device} {
+				font-size: 48px;
+			}
+
+			@media #{$xs-device} {
+				font-size: 38px;
+				letter-spacing: 2px;
+			}
+
+			@media (max-width: 355px) {
+				font-size: 28px;
+			}
+
+			&:after {
+				background-color: $color-theme;
+			}
+		}
+
+		.subtitle {
+			@include font-prop(18px, 500, $light, 1.2);
+			text-shadow: 0 1px 2px $color-text;
+
+			@media #{$lg-device} {
+				font-size: 16px;
+			}
+
+			@media #{$sm-device} {
+				font-size: 16px;
+			}
+
+			@media (max-width: 355px) {
+				font-size: 14px;
+			}
+
+			&:after {
+				background-color: $color-theme;
+			}
+		}
+
+		&.active {
+			.image-area, .title, .subtitle {
+				span {
+					opacity: 1;
+				}
+				&:after {
+					animation: sliderAnimation 1.2s ease-in-out forwards;
+				}
+			}
+		}
+	}
+
+
+
+	// Тут никогда не трогаем
+	&-item {
+		width: 100%;
+		position: relative;
+
+		&--image {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute !important;
+			left: 0;
+			top: 0;
+		}
+
+		&--wrapper {
+			position: relative;
+			z-index: 10;
+			width: 100%;
+			height: 100%;
+			padding-top: var(--padding-top);
+			padding-bottom: var(--padding-bottom);
+
+			.container {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&--layout {
+			height: 100%;
+
+			&--left {
+				&-top {
+					justify-content: flex-start;
+					align-items: flex-start;
+					text-align: left;
+				}
+				&-center {
+					justify-content: flex-start;
+					align-items: center;
+					text-align: left;
+				}
+				&-bottom {
+					justify-content: flex-start;
+					align-items: flex-end;
+					text-align: left;
+				}
+			}
+
+			&--center {
+				&-top {
+					justify-content: center;
+					align-items: flex-start;
+					text-align: center;
+				}
+				&-center {
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+				}
+				&-bottom {
+					justify-content: center;
+					align-items: flex-end;
+					text-align: center;
+				}
+			}
+
+			&--right {
+				&-top {
+					justify-content: flex-end;
+					align-items: flex-start;
+					text-align: right;
+				}
+				&-center {
+					justify-content: flex-end;
+					align-items: center;
+					text-align: right;
+				}
+				&-bottom {
+					justify-content: flex-end;
+					align-items: flex-end;
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+@keyframes sliderAnimation {
+	0% {
+		width: 0;
+	}
+
+	50% {
+		width: 100%;
+	}
+
+	100% {
+		left: 100%;
+	}
+}

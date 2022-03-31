@@ -1,0 +1,55 @@
+.modal {
+	&:not(.vg-form-sender-modal) {
+		.modal-close {
+			position: absolute;
+			right: -45px;
+			top: -45px;
+			opacity: .9;
+			background: transparent;
+			border: none;
+			font-size: 18px;
+			cursor: pointer;
+			transition: transform .8s ease-in-out;
+			width: 35px;
+			height: 30px;
+			display: block;
+
+			@media #{$sm-device} {
+				right: 12px;
+				top: -46px;
+			}
+
+			svg {
+				width: 25px;
+
+				polygon {
+					fill: white !important;
+				}
+			}
+
+			&:hover {
+				transform: rotate(360deg);
+			}
+		}
+	}
+
+	&-dialog {
+
+	}
+
+	&-content {
+
+	}
+
+	&-header {
+
+	}
+
+	&-body {
+
+	}
+
+	&-footer {
+
+	}
+}

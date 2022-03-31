@@ -1,0 +1,115 @@
+.vg-nav {
+	&-main-container {
+		@media #{$xl-device, $xxl-device} {
+			@include flex(center, space-between);
+		}
+
+		li {
+			margin-right: 24px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				@include font-prop(15px, 600, white, 1);
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				display: block;
+				position: relative;
+
+				@media #{$xl-device} {
+					font-size: 14px;
+				}
+
+
+				@media #{$lg-device} {
+					font-size: 14px;
+					padding: 14px 0;
+				}
+
+				&:hover, &.active {
+					color: $color-second;
+					text-decoration: none;
+				}
+
+				.toggle {
+					font-size: 14px;
+					position: relative;
+					top: 2px;
+					display: inline-block;
+					width: 12px;
+
+					i {
+						position: absolute;
+						transition: $transition;
+						transform: rotate(0);
+						font-weight: 600;
+						top: -16px;
+						left: 7px;
+					}
+				}
+			}
+
+			&.dropdown.show > a span.toggle i {
+				transform: rotate(-180deg);
+			}
+
+			ul {
+				box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1);
+				background: white;
+				top: 75% !important;
+
+				li {
+					border-bottom: 1px solid #f5f5f5;
+
+					a {
+						display: block;
+						padding: 10px 15px;
+						@include font-prop(16px, 400);
+						text-transform: none;
+
+						&:before {
+							display: none;
+						}
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+
+	&-hamburger {
+		height: 28px;
+
+		&--lines {
+			height: 28px;
+
+			span {
+				background-color: rgba($light, .8);
+			}
+		}
+	}
+
+	&-sidebar {
+		&__close {
+			top: 7px;
+			font-size: 36px;
+			z-index: 1000;
+		}
+
+		&__content {
+			width: 100%;
+			padding: 0 20px 20px 20px;
+			margin-top: 20px;
+
+			.toggle {
+				margin-left: 5px;
+				font-size: 13px;
+			}
+		}
+	}
+}

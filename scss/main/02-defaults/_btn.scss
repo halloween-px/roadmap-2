@@ -1,0 +1,84 @@
+.btn {
+	@include font-prop(map-get($btn-size-default, fs), map-get($btn-size-default, fw), $color-text, map-get($btn-size-default, lh));
+	padding: map-get($btn-size-default, padding);
+	border-radius: map-get($btn-size-default, radius);
+	transition: $transition;
+	border-width: $btn-border-width;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	@media #{$xs-device} {
+		padding: 8px 24px;
+		font-size: 13px;
+	}
+
+	@media (max-width: 355px) {
+		padding: 7px 14px;
+	}
+
+
+	.btn:focus, button:focus{
+		outline: none;
+	}
+
+	// Colors
+	&--primary {
+		background-color: map-get($btn-color-primary, background);
+		color: map-get($btn-color-primary, color);
+
+		&:hover, &:focus, &:active {
+			background-color: map-get($btn-color-primary-hover, background);
+			color: map-get($btn-color-primary-hover, color);
+		}
+	}
+
+	&--secondary {
+		background-color: map-get($btn-color-secondary, background);
+		color: map-get($btn-color-secondary, color);
+
+		&:hover, &:focus, &:active {
+			background-color: map-get($btn-color-secondary-hover, background);
+			color: map-get($btn-color-secondary-hover, color);
+		}
+	}
+
+	// Colors Outline
+	&--outline {
+		&-primary {
+			background: transparent;
+			border-color:  map-get($btn-color-primary, background);
+			color: map-get($btn-color-primary, background);
+
+			&:hover, &:focus, &:active {
+				background: map-get($btn-color-primary, background);
+				color: white;
+			}
+		}
+
+		&-white {
+			background: transparent;
+			border-color:  white;
+			color: white;
+
+			&:hover, &:focus, &:active {
+				background: white;
+				color: $color-text;
+			}
+		}
+	}
+
+	// Sizes
+	&--lg {
+		padding: map-get($btn-size-large, padding);
+		font-size: map-get($btn-size-large, fs);
+		border-radius: map-get($btn-size-large, radius);
+	}
+
+	&--sm {
+		padding: map-get($btn-size-small, padding);
+		font-size: map-get($btn-size-small, fs);
+		border-radius: map-get($btn-size-small, radius);
+	}
+}

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import MainLayout from "../components/layouts/Main";
 import UserCard from "../components/users/Card";
+import SliderCard from "../components/sliders/Card";
 
 const IndexPage = () => {
     const [users, setUsers] = useState([]);
-    const [count, setCount] = useState(0);
     useEffect(() => {
         fetch('http://localhost:3001/users')
             .then(res => res.json())
@@ -12,16 +13,18 @@ const IndexPage = () => {
             })
     }, [])
     return (
-        <div className="team">
-            <div className="conteiner">
-                <div className="team__inner">
-                    {users.map((user) => {
-                        return <UserCard key={user.id} user={user} />
-                    })}
+        <MainLayout>
+            <SliderCard />
+            <div className="team">
+                <div className="container">
+                    <div className="team__inner">
+                        {users.map((user) => {
+                            return <UserCard key={user.id} user={user} />
+                        })}
+                    </div>
                 </div>
-                <button onClick={() => setCount(count + 1)} >{count}</button>
             </div>
-        </div>
+        </MainLayout>
 
     )
 }

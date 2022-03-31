@@ -1,0 +1,38 @@
+.file {
+	display: block;
+	@include font-prop(16px, 500);
+	position: relative;
+
+	&:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	&:before {
+		font-family: $font-awesome;
+		top: 3px;
+		position: relative;
+		font-size: 160%;
+		font-weight: 600;
+		margin-right: 10px;
+		color: $color-second;
+	}
+
+	&-pdf {
+		&:before {
+			content: '\f1c1';
+		}
+	}
+
+	&-default {
+		&:before {
+			content: '\f15b';
+		}
+	}
+
+	&-word {
+		&:before {
+			content: '\f1c2';
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.vg-page {
+	&-home-h1 {
+		position: fixed;
+		top: -999999999px;
+		left: -999999999px;
+	}
+
+	@import "./pages/default";
+}

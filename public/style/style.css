@@ -383,62 +383,6 @@ nav {
 	background-color: #fff;
 }
 
-/*<!--=============TESTIMONIALS========-->*/
-
-.reviews {
-	background-color: #53354a;
-	overflow: hidden;
-}
-
-.reviews__item {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-
-.reviews__photo {
-	width: 50%;
-	height: 500px;
-	position: relative;
-
-}
-
-.reviews__img {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	z-index: 1;
-	transform: translateY(-50%);
-	width: 960px;
-}
-
-
-.reviews__content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 50%;
-	padding-left: 80px;
-}
-
-
-.reviews__text {
-	margin-bottom: 25px;
-	font-family: 'Cardo', sans-serif;
-	font-size: 36px;
-	font-style: italic;
-	line-height: 1.2;
-	color: #fff;
-}
-
-
-.reviews__author {
-	font-size: 13px;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #fff;
-
-}
 
 
 /*<!--=============DOWNLOAD========-->*/

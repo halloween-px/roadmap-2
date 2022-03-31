@@ -1,0 +1,161 @@
+.list {
+	position: relative;
+	@include flex();
+
+	&-item {
+		margin-right: 15px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&-column {
+		flex-direction: column;
+
+		.list-item {
+			margin-right: 0;
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&-border {
+		.list-item {
+			border: map-get($list-border, width) map-get($list-border, style) map-get($list-border, color);
+		}
+
+		@each $position in $positions {
+			&--#{$position} {
+				.list-item {
+					border-#{$position}: map-get($list-border, width) map-get($list-border, style) map-get($list-border, color);
+				}
+			}
+		}
+	}
+
+	&-icon {
+		.list-item {
+			padding-left: 30px;
+			position: relative;
+
+			i {
+				position: absolute;
+				left: 0;
+				top: 4px;
+			}
+		}
+
+		&--colored {
+			.list-item {
+				i {
+					color: $color-theme;
+				}
+			}
+
+			&-secondary {
+				.list-item {
+					i {
+						color: $color-second;
+					}
+				}
+			}
+		}
+	}
+
+	&-style {
+		&--none {
+			.list-item {
+				list-style: none !important;
+			}
+		}
+
+		&--decimal {
+			.list-item {
+				list-style: decimal !important;
+			}
+		}
+
+		&--disc {
+			.list-item {
+				list-style: disc !important;
+			}
+		}
+
+		&--square {
+			.list-item {
+				list-style: square !important;
+			}
+		}
+	}
+
+	&-social {
+		.list-item {
+			a {
+				@include font-prop(16px, 400, white);
+
+				&.whatsapp {
+					color: #7fba6f;
+				}
+
+				&.viber {
+					color: #665CAC
+				}
+
+				&.telegram {
+					color: #0088cc;
+				}
+
+				&.facebook {
+					color: #4267B2;
+				}
+
+				&.vk {
+					color: #4C75A3;
+				}
+
+				&.odnoklassniki {
+					color: #ed812b;
+				}
+
+				&.insta {
+					background: linear-gradient(180deg, rgba(252,175,69,1) 0%, rgba(245,96,64,1) 20%, rgba(253,29,29,1) 40%, rgba(193,53,132,1) 60%, rgba(88,81,216,1) 80%, rgba(64,93,230,1) 100%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+
+				&.twitter {
+					color: #1DA1F2;
+				}
+
+				&.skype {
+					color: #00AFF0;
+				}
+			}
+		}
+	}
+
+	&-nav {
+		&-contacts {
+			.list-item {
+				padding-bottom: 5px;
+				border-bottom: map-get($list-border, width) map-get($list-border, style) map-get($list-border, color);
+			}
+		}
+
+		&-social {
+			@extend .list-social;
+
+			.list-item {
+				a {
+					font-size: 38px;
+					border: none;
+					padding: 0;
+				}
+			}
+		}
+	}
+}

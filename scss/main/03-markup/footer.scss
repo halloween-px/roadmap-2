@@ -1,0 +1,18 @@
+.vg-footer {
+	position: relative;
+	padding: 12px;
+	background-color: $color-text;
+
+	&-top {
+
+	}
+
+	&-copyright {
+		color: $light;
+		font-size: 14px;
+
+		a:hover {
+			color: $color-second;
+		}
+	}
+}

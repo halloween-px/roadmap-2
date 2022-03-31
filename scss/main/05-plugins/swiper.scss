@@ -1,0 +1,56 @@
+.swiper {
+	// Buttons
+	.swiper-button {
+		&-prev, &-next {
+			--swiper-navigation-size: 35px;
+			&:after {
+				font-family: $font-awesome;
+				color: $light;
+			}
+
+			@media #{$xs-device} {
+				display: none !important;
+			}
+		}
+
+		&-prev {
+			left: 12px;
+			&:after {
+				content: '\f053';
+			}
+		}
+
+		&-next {
+			right: 12px;
+			&:after {
+				content: '\f054';
+			}
+		}
+	}
+
+	// Pagination
+	.swiper-pagination {
+		&-bullet {
+			width: 50px;
+			height: 3px;
+			transition: all 700ms ease;
+			opacity: 1;
+			border-radius: 0;
+			background-color: rgba(204,204,204,0.5);
+
+			&-active {
+				background-color: $light;
+			}
+		}
+
+		&--vertical {
+			@media #{$lg-device, $xl-device, $xxl-device} {
+				width: 20px !important;
+				left: auto !important;
+				bottom: auto !important;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+}

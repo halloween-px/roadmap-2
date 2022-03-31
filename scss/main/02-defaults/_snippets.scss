@@ -1,0 +1,93 @@
+// border
+.border {
+	border: 1px solid #f5f5f5;
+
+	@each $position in $positions {
+		&-#{$position} {
+			border-#{$position}: $border-width $border-style $border-color;
+		}
+	}
+
+	&-none {
+		border: none !important;
+	}
+}
+
+// colors
+.color {
+	&-theme {
+		color: $color-theme !important;
+	}
+	&-second {
+		color: $color-second !important;
+	}
+}
+
+// Admin links
+.vg-admin {
+	&-links {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background: $color-theme;
+		z-index: 9999;
+
+		a {
+			padding: 8px;
+			color: #fff;
+			display: block;
+
+			&:hover {
+				color: #f3f3f3;
+			}
+		}
+	}
+}
+
+// Scroll up btn
+.vg-scroll {
+	&-top {
+		position: fixed;
+		bottom: 67px;
+		right: -60px;
+		transition: $transition;
+		z-index: 989;
+
+		a {
+			@include font-prop(14px, 400, white);
+			width: 40px;
+			height: 40px;
+			@include flex(center, center);
+			background: $color-theme;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		&.is-active {
+			right: 10px;
+		}
+
+		@media #{$sm-device} {
+			display: none;
+		}
+	}
+}
+
+// sub titles
+.vg-titles {
+	@include font-prop(24px, bold, $color-text, 1);
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 15px;
+	padding-left: 60px;
+
+	@media #{$sm-device} {
+		font-size: 22px;
+	}
+
+	span {
+
+	}
+}

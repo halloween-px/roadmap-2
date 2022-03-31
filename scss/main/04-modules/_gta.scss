@@ -1,0 +1,59 @@
+.vg-gta {
+	padding-bottom: 60px;
+
+	&-item {
+		background: url("/assets/_frontend/images/resource/catalog/bg.jpg") center no-repeat;
+		background-size: cover;
+		position: relative;
+		padding: 36px;
+		z-index: 1;
+
+		&:after {
+			content: '';
+			@include fullAbsolute;
+			background-color: rgba($color-text, .8);
+			z-index: -1;
+		}
+
+		i {
+			font-size: 75px;
+			color: $color-theme;
+			margin-right: 16px;
+			padding-top: 11px;
+		}
+
+		p {
+			@include font-prop(18px, 500, $light);
+			margin-bottom: 0;
+
+			a {
+				@include font-prop(30px, 600, $color-theme);
+				text-decoration: underline;
+				display: inline-block;
+
+				&:hover {
+					color: $color-second;
+				}
+
+				@media (max-width: 420px) {
+					font-size: 24px;
+				}
+			}
+		}
+
+		.btn {
+			width: 100%;
+			padding: 22px 12px;
+			font-size: 24px;
+
+			@media #{$xl-device, $lg-device} {
+				font-size: 20px;
+			}
+
+			@media #{$xs-device} {
+				padding: 16px 12px;
+				font-size: 22px;
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+.vg-catalog {
+	background: url("/assets/_frontend/images/resource/catalog/bg.jpg") 50% fixed no-repeat;
+	background-size: cover;
+	position: relative;
+
+	&:after {
+		content: '';
+		@include fullAbsolute();
+		background-color: rgba($color-text, .5);
+	}
+
+	&-item {
+		@include flex(null, space-between, column);
+		height: 400px;
+		padding: 24px;
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+		filter: blur(2px);
+		transition: $transition;
+
+		@media #{$xl-device, $lg-device} {
+			height: 350px;
+		}
+
+		@media #{$md-device, $sm-device} {
+			height: 300px;
+		}
+
+		&.active {
+			filter: blur(0);
+		}
+
+		&:hover {
+			transform: translateY(-5px);
+
+			a {
+				left: 0;
+			}
+		}
+
+		.link-area {
+			@include fullAbsolute;
+			z-index: -1;
+		}
+
+		&:after {
+			content: '';
+			@include fullAbsolute;
+			background: linear-gradient(0deg, rgba(45, 45, 45, 0.9) 0%, rgba(45, 45, 45, 0.6) 20%, rgba(45, 45, 45, 0) 50%);
+			z-index: -2;
+		}
+
+		h4 {
+			@include font-prop(20px, 500, $light);
+			margin-bottom: 0;
+			margin-left: -24px;
+
+			span {
+				display:inline-block;
+				padding: 5px 14px;
+				background-color: $color-text;
+			}
+		}
+
+		a {
+			@include flex(center, space-between);
+			@include font-prop(18px, 500, $light);
+			text-transform: uppercase;
+			position: relative;
+			left: -103%;
+			transition: $transition;
+
+			@media #{$lg-device, $md-device, $sm-device} {
+				left: 0;
+			}
+
+			i {
+				width: 50px;
+				height: 50px;
+				background-color: $color-theme;
+				color: $light;
+				@include flex(center,center);
+			}
+		}
+	}
+}

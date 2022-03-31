@@ -1,0 +1,12 @@
+.container {
+	position: relative;
+	z-index: 2;
+
+	@media (min-width: 1600px) {
+		max-width: $grid-container-max-widths;
+	}
+}
+
+.row-gap {
+	row-gap: $grid-gutter-width;
+}

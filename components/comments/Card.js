@@ -3,7 +3,7 @@ const CommentCard = (props) => {
 
     return (
         <>
-        <div className="reviews__item">
+        <div className="reviews__item col-lg-6">
 			<div className="reviews__content">
 				<div className="reviews__text">{ comment.name }
 				</div>

@@ -1,0 +1,35 @@
+.vg-breadcrumbs {
+	h1, .h1 {
+
+	}
+
+	.list-breadcrumbs {
+		@media #{$sm-device, $md-device} {
+			overflow-x: auto;
+			padding: 0 15px;
+		}
+
+		.list-item {
+			@include font-prop(16px, 600);
+			margin: 0;
+			white-space: nowrap;
+
+			a, span {
+				display: inline-block;
+				padding: 18px 0;
+			}
+
+			&:after {
+				content: ' - ';
+				padding: 0 8px 0 5px;
+				color: $color-second;
+			}
+
+			&:last-child {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}

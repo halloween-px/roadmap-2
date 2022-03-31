@@ -1,0 +1,29 @@
+.vg-pagination {
+	.pagination {
+		.page-item {
+			border: 1px solid $border-color;
+
+			&.active .page-link {
+				color: $color-second;
+				border-color: $color-second;
+			}
+
+			&.disabled .page-link {
+				color: rgba(0, 0, 0, .4);
+			}
+
+			.page-link {
+				font-family: $font-family-heading;
+				font-size: 18px;
+				background-color: transparent;
+				color: $color-text;
+				border-color: transparent;
+
+				&:hover, &:focus {
+					color: $color-second;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}

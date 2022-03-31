@@ -1,0 +1,70 @@
+.vg-about {
+
+	&:after {
+		content: '';
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		background: url("/assets/_frontend/images/resource/about/bg.png") no-repeat center;
+		background-size: cover;
+		opacity: .07;
+		filter: drop-shadow(2px 4px 6px black);
+		z-index: -1;
+	}
+
+	p {
+		@include font-prop(16px, 500, rgba($color-text, .8));
+		text-align: center;
+
+		span {
+			@include font-prop(18px, 600, rgba($color-text, .8));
+		}
+	}
+
+	.special-text {
+		@include font-prop(20px, 600, rgba($color-text, .8));
+	}
+
+	.images-area {
+		@include flex(null, end);
+		height: 100%;
+		width: 100%;
+		position: relative;
+
+		img {
+			object-fit: cover;
+			object-position: center;
+		}
+
+		img:first-child {
+			height: 50%;
+			width: 40%;
+			position: absolute;
+			left: 40px;
+			bottom: 60px;
+
+			@media #{$lg-device} {
+				width: 50%;
+			}
+
+			@media #{$md-device, $sm-device} {
+				height: 75%;
+			}
+
+			@media #{$sm-device} {
+				bottom: 45px;
+			}
+		}
+
+		img:last-child {
+			height: 100%;
+			width: 60%;
+
+			@media #{$lg-device} {
+				width: 75%;
+			}
+		}
+	}
+}

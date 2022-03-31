@@ -1,5 +1,3 @@
-const { get } = require("express/lib/request");
-
 const comments = [
     {
       "postId": 1,

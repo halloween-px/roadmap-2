@@ -30,7 +30,7 @@ const PostsPage = () => {
     }, [postId])
 
     return (
-        <MainLayout>
+        <MainLayout darkHeader = {true}>
             <div className="conteiner">
                 {!!post && <PostsCard post={post} />}
             </div>
@@ -38,7 +38,11 @@ const PostsPage = () => {
             <div className="reviews">
                 <div className="conteiner">
                     <div className='row row-gap'>
-                        <h2>Комментарии</h2>
+                        <div className='section section-title'>
+                            <div className='section-title--wrapper'>
+                                <h2 className='title'>Комментарии</h2>
+                            </div>
+                        </div>
                         {comments.map((comment) => {
                             return (
                                 <CommentCard key={comment.id} comment={comment} />

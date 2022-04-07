@@ -9,7 +9,7 @@ const Header = ({darkHeader}) => {
             {id:5, nav:'Контакты', link:'/contacts'}
         ]
     return (
-        <div className={`vg-header ${darkHeader ? 'dark' : ''}`}>
+        <div className={`vg-header ${darkHeader ? 'page-header' : ''}`}>
             <div className='vg-header-wrapper'>
                 <div className="vg-header-top">
                     <div className="container">

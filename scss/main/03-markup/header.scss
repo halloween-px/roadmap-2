@@ -1,6 +1,13 @@
 .vg-header {
 	position: relative;
 
+	&.page-header {
+		.vg-header-wrapper {
+			position: relative;
+			background-color: #333;
+		}
+	}
+
 	&-wrapper {
 		transition: $transition;
 		position: absolute;

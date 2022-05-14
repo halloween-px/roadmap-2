@@ -4,7 +4,7 @@ const list =  async (req, res, next) => {
 	try {
         const {userId, skip = 0, limit = 10} = req.query;
 		res.json({ 
-            items: await Post.find({ userId: +userId })
+            items: await Post.find({ userId: userId })
                 .skip(+skip)
                 .limit(+limit)
         });
@@ -15,7 +15,7 @@ const list =  async (req, res, next) => {
 
 const getById = async (req, res, next) => {
 	try {
-		res.json({ item:await Post.findOne({ id: +req.params.id }) });
+		res.json({ item:await Post.findById(req.params.id) });
 	} catch (error) {
 		next(error);
 	}

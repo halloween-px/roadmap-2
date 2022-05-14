@@ -43,7 +43,7 @@ const UsersPage = () => {
                     <div className="row features-item">
                         {posts.map((post) => {
                             return (
-                                <div key={post.id} className="col-lg-6">
+                                <div key={post._id} className="col-lg-6">
                                     <PostsCard post={post} />
                                 </div>
                             )

@@ -45,7 +45,7 @@ const PostsPage = () => {
                         </div>
                         {comments.map((comment) => {
                             return (
-                                <CommentCard key={comment.id} comment={comment} />
+                                <CommentCard key={comment._id} comment={comment} />
                             )
                         })}
                     </div>

@@ -19,7 +19,7 @@ const IndexPage = () => {
                 <div className="container">
                     <div className="team__inner">
                         {users.map((user) => {
-                            return <UserCard key={user.id} user={user} />
+                            return <UserCard key={user._id} user={user} />
                         })}
                     </div>
                 </div>

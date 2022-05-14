@@ -11,10 +11,14 @@ const PORT = 3001;
 
 app.use(express.static("public"));
 app.use(cors());
+app.use(express.json())
 
 //users
 app.get('/users', UserController.list);
 app.get('/users/:id', UserController.getById);
+
+app.post('/users', UserController.create);
+app.put('/users/:id', UserController.update);
 
 //posts
 app.get('/posts', PostContoller.list);

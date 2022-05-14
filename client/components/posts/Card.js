@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const PostsCard = ({ post: { id, title, body } }) => {
+const PostsCard = ({ post: { id, _id, title, body } }) => {
 
     return (
         <>
@@ -13,7 +13,7 @@ const PostsCard = ({ post: { id, title, body } }) => {
                         <p className="card-text mb-auto">
                             {body.slice(0, 30)}...
                         </p>
-                        <Link href={`/posts/${id}`}>
+                        <Link href={`/posts/${_id}`}>
                             <a className="stretched-link">
                                 Continue reading
                             </a>

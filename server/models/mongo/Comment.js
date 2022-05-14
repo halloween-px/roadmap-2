@@ -6,7 +6,7 @@ const CommentSchema = new Schema({
   body:String,
   email:String,
   id:Number,
-  postId:Number,
+  postId:Schema.Types.ObjectId,
 });
 
 const model = mongoose.model('Comment', CommentSchema, 'comments');

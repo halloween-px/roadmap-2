@@ -5,7 +5,7 @@ const PostSchema = new Schema({
   title:String,
   body:String,
   id:Number,
-  userId:Number,
+  userId: Schema.Types.ObjectId,
 });
 
 const model = mongoose.model('Post', PostSchema, 'posts');

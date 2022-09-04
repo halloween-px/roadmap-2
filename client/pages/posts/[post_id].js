@@ -1,32 +1,22 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import CommentCard from '../../components/comments/Card';
+import { useMainContext } from '../../components/contexts/Main';
 import MainLayout from '../../components/layouts/Main';
 import PostsCard from '../../components/posts/Card';
 
 const PostsPage = () => {
     const router = useRouter();
-    const [post, setPost] = useState();
-    const [comments, setComments] = useState([]);
+    const {post, loadPost, comments, loadComments} = useMainContext();
     const postId = router.query.post_id;
 
     useEffect(() => {
         if (!postId) {
             return
         }
-
-        fetch(`http://localhost:3001/posts/${postId}`)
-            .then(res => res.json())
-            .then(data => {
-                setPost(data.item);
-            })
-
-        fetch(`http://localhost:3001/comments?postId=${postId}`)
-            .then(res => res.json())
-            .then(data => {
-                setComments(data.items);
-            })
-
+        loadPost(postId);
+        loadComments(postId);
+        
     }, [postId])
 
     return (

@@ -9,7 +9,7 @@
 
 	&-item {
 		padding: 24px;
-		@include flex(center, end, column);
+		@include flex(center, flex-end, column);
 		height: 400px;
 		position: relative;
 		z-index: 1;

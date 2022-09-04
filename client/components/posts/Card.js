@@ -1,6 +1,8 @@
 import Link from "next/link";
-
-const PostsCard = ({ post: { id, _id, title, body } }) => {
+const getNum = (_id) => {
+    return parseInt(_id.slice(-2), 16);
+}
+const PostsCard = ({ post: { _id, title, body } }) => {
 
     return (
         <>
@@ -22,7 +24,7 @@ const PostsCard = ({ post: { id, _id, title, body } }) => {
                     <div className="col-auto d-none d-lg-block w-100">
                         <img
                             className="bd-placeholder-img w-100" style={{ height: '250px', objectFit: 'cover', objectPosition: 'center' }}
-                            src={`https://picsum.photos/id/${id}/900/900/`}
+                            src={`https://picsum.photos/id/${getNum(_id)}/900/900/`}
                         />
                     </div>
                 </div>

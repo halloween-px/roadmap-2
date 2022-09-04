@@ -1,13 +1,122 @@
 .vg-form {
-	.form {
-		&-control {
-			@each $prop, $val in $form-control {
-				#{$prop}: $val;
+	width: 100%;
+
+	.form-group {
+		position: relative;
+		font-family: $font-family-heading;
+		overflow: hidden;
+
+		&__label {
+			position: absolute;
+			left: 19px;
+			top: 20px;
+			transition: $transition;
+			@include font-prop(16px, normal, $color-text, 22px);
+			margin: 0;
+			cursor: text;
+			@include textDoted;
+
+			&.with-select2 {
+				top: 8px;
+				@include font-prop(12px, normal, #aaaeb4, 14px);
+
+				&.show {
+					color: $color-theme;
+				}
 			}
+		}
+
+		&__forgot {
+			position: absolute;
+			right: 19px;
+			top: 20px;
+
+			a {
+				@include font-prop(14px, normal, darken(#aaaeb4, 5%), 16px);
+			}
+		}
+
+		&__input {
+			width: 100%;
+			height: auto;
+			background-color: transparent;
+			border: 1px solid $border-color;
+			border-radius: 0;
+			padding: 28px 12px 10px 18px;
+			@include font-prop(18px, normal, $color-text, 22px);
 
 			&::placeholder {
-				@each $prop, $val in $form-control-placeholder {
-					#{$prop}: $val;
+				color: rgba($light, 0);
+			}
+
+			&:required:focus {
+				border-color: darkred;
+
+				+ .form-group__label {
+					@include font-prop(12px, normal, darkred, 14px);
+					top: 8px;
+				}
+			}
+
+			&:focus {
+				border-color: $color-theme;
+
+				+ .form-group__label {
+					@include font-prop(12px, normal, $color-theme, 14px);
+					top: 8px;
+				}
+			}
+
+			&:not(:placeholder-shown) {
+				border-color: $border-color;
+
+				+ .form-group__label {
+					@include font-prop(12px, normal, $color-text, 14px);
+					top: 8px;
+				}
+			}
+
+			&[disabled] {
+				background-color: $border-color;
+			}
+		}
+
+		textarea {
+			/*min-height: 150px;*/
+		}
+	}
+
+	&-dark {
+		.form-group {
+			.form-group__label {
+				color: rgba($light, 0.8) !important;
+			}
+
+			.form-group__input {
+				color: rgba($light, 0.8);
+				border-color: rgba($light, 0.1);
+
+				&:required:focus {
+					border-color: rgba($light, 0.3);
+
+					+ .form-group__label {
+						color: white;
+					}
+				}
+
+				&:not(:placeholder-shown) {
+					border-color: #696767;
+				}
+
+				&:focus {
+					+ .form-group__label {
+						color: white;
+					}
+				}
+
+				&:-webkit-autofill {
+					-webkit-box-shadow: inset 0 0 0 50px rgba($dark, .9);
+					-webkit-text-fill-color: rgba($light, 0.8);
 				}
 			}
 		}

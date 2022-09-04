@@ -1,28 +1,33 @@
-.vg-pagination {
-	.pagination {
-		.page-item {
-			border: 1px solid $border-color;
+.pagination {
+	.page-item {
+		width: 35px;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3px;
+		background-color: white;
 
-			&.active .page-link {
+		&.active .page-link {
+			color: $color-second;
+			border-color: $color-second;
+		}
+
+		&.disabled .page-link {
+			color: rgba(0, 0, 0, .4);
+		}
+
+		.page-link {
+			font-family: $font-family-heading;
+			font-size: 18px;
+			background-color: transparent;
+			color: $color-text;
+			border-color: transparent;
+
+			&:hover,
+			&:focus {
 				color: $color-second;
-				border-color: $color-second;
-			}
-
-			&.disabled .page-link {
-				color: rgba(0, 0, 0, .4);
-			}
-
-			.page-link {
-				font-family: $font-family-heading;
-				font-size: 18px;
-				background-color: transparent;
-				color: $color-text;
-				border-color: transparent;
-
-				&:hover, &:focus {
-					color: $color-second;
-					box-shadow: none;
-				}
+				box-shadow: none;
 			}
 		}
 	}

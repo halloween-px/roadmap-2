@@ -19,8 +19,12 @@ const UserSchema = new Schema({
   },
   company:{
       name:String
-  }
-});
+  },
+  role:{
+    type: Number,
+    required: true,
+  },
+})
 
 const model = mongoose.model('User', UserSchema, 'users');
 

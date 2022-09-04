@@ -102,6 +102,19 @@
 				}
 			}
 		}
+
+		
+		.link-authorization {
+			i {
+				font-size: 24px;
+				color: $light;
+				transition: $transition;
+
+				&:hover {
+					color: $color-theme;
+				}
+			}
+		} 
 	}
 
 	&-bottom {

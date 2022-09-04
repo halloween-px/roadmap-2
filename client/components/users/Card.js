@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-const UserCard = (props) => {
-    const user = props.user;
+const UserCard = ({user}) => {
+    const {_id, username, name, email} = user;
     return (
         <>
             <div className="team__item">
-               <Link href={`/users/${user._id}`}><a><img className="team__photo" style={{width:'100%'}} src={`https://i.pravatar.cc/?img=${user.id}`} alt="" /></a></Link>
-                <div className="team__title1">{user.name}</div>
-                <div className="team__title2">{user.email}</div>
+               <Link href={`/users/${_id}`}><a><img className="team__photo" style={{width:'100%'}} src={`https://i.pravatar.cc/?u=${_id}`} alt="" /></a></Link>
+                <div className="team__title1">{name}</div>
+                <div className="team__title2">{email}</div>
                 <div className="team__text">
-                    <p>{user.username}</p>
+                    <p>{username}</p>
                 </div>
             </div>
         </>

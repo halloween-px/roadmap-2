@@ -1,0 +1,93 @@
+.account-auth {
+	.image-area {
+		padding: 24px;
+		@include flex(center, center);
+		background-color: $color-theme;
+
+		img {
+			@include fit();
+		}
+
+		@media #{$md-device, $sm-device} {
+			height: 300px;
+			padding: 2rem;
+
+			img {
+				object-fit: contain;
+				height: 100%;
+			}
+		}
+
+		@media #{$sm-device} {
+			height: 200px;
+			padding: 1rem;
+		}
+	}
+
+	.auth-area {
+		@include flex(center, center, column);
+		padding: 5rem 2rem;
+		background-color: #111111;
+
+		@media #{$sm-device} {
+			padding: 1.5rem;
+		}
+
+		h4 {
+			@include font-prop(32px, normal, white, 36px);
+			margin-bottom: 24px;
+		}
+
+		p {
+			font-family: $font-family-heading;
+			color: $light;
+			margin: 30px 0 0 0;
+
+			a:hover {
+				border-bottom: 1px solid $color-second;
+				color: $color-second;
+			}
+		}
+	}
+
+	.alert-area {
+		.error {
+			padding: 1.5rem 0 2rem;
+			color: white;
+			font-family: $font-family-heading;
+		}
+	}
+
+
+	&-nav {
+		flex-direction: column;
+		border-radius: 20px;
+
+		& a,
+		& button {
+			border: none;
+			@include font-prop(24px, 400, $color-text, 1.5);
+			border-radius: 0;
+			display: block;
+			padding: 15px 15px 13px;
+			text-transform: uppercase;
+			width: 100%;
+			text-align: left;
+			background-color: transparent;
+
+			&:hover,
+			&.active {
+				color: white;
+				text-decoration: none;
+				background-color: black;
+			}
+
+			& i {
+				font-size: 23px;
+				text-align: center;
+				width: 35px;
+				margin-right: 15px;
+			}
+		}
+	}
+}

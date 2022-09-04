@@ -1,4 +1,6 @@
 .modal {
+	background-color: rgba($dark, .8);
+
 	&:not(.vg-form-sender-modal) {
 		.modal-close {
 			position: absolute;
@@ -13,10 +15,11 @@
 			width: 35px;
 			height: 30px;
 			display: block;
+			z-index: 100;
 
 			@media #{$sm-device} {
 				right: 12px;
-				top: -46px;
+				top: 20px;
 			}
 
 			svg {
@@ -33,23 +36,89 @@
 		}
 	}
 
-	&-dialog {
+	&-dark {
+		.modal-content {
+			background-color: black;
+		}
+	}
 
+	&-dialog {
+		max-width: 900px;
+		margin-top: 100px;
+		margin-bottom: 0;
+
+		&-centered {
+			margin-top: 0;
+		}
 	}
 
 	&-content {
-
+		border: none;
+		background-color: $dark;
 	}
 
 	&-header {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		background-color: #ebe7ec;
+	}
 
+	&-title {
+		@include font-prop(18px, 700)
 	}
 
 	&-body {
+		padding: 5%;
 
+		textarea {
+			min-height: 150px;
+		}
 	}
 
 	&-footer {
 
+	}
+
+	&-partners {
+		margin-top: 70px;
+
+		&--content {
+			background-color: rgba(17, 17, 17, 1);
+		}
+
+		&--header {
+			border-bottom-color: $color-second;
+			background-color: black;
+
+			&--title {
+				@include font-prop(40px, bold, white);
+				margin-bottom: 0;
+			}
+		}
+
+		&--body {
+			&--text {
+				@include font-prop(16px, 400, rgba(white, .8));
+				font-family: $font-family-heading;
+			}
+		}
+	}
+}
+
+#modal-search {
+	@media #{$xs-device} {
+		.modal-dialog {
+			margin: 0;
+			height: 100%;
+		}
+
+		.modal-content {
+			height: 100%;
+		}
+
+		.modal:not(.vg-form-sender-modal) .modal-close {
+			top: 14px;
+		}
 	}
 }

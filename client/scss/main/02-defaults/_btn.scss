@@ -37,10 +37,11 @@
 	&--secondary {
 		background-color: map-get($btn-color-secondary, background);
 		color: map-get($btn-color-secondary, color);
+		border-color: $color-theme;
 
 		&:hover, &:focus, &:active {
-			background-color: map-get($btn-color-secondary-hover, background);
-			color: map-get($btn-color-secondary-hover, color);
+			background-color: $color-second;
+			color: $light;
 		}
 	}
 
